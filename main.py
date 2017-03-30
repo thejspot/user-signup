@@ -15,10 +15,23 @@
 # limitations under the License.
 #
 import webapp2
+form="""
+<form>
+    <label>Username<input type='text' name='username'></label>
+    <br>
+    <label>Password<input type='text' name='password'></label>
+    <br>
+    <label>Verify Password<input type='text' name='verify password'></label>
+    <br>
+    <label>Email(optional)<input type='text' name='email'></label>
+    <br>
+    <input type="submit">
+</form>
+"""
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        self.response.write(form)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
